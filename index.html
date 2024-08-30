@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #001f3f; /* Dongker (Navy Blue) color */
+            color: white; /* Text color for better contrast */
+        }
+        .wizard-animation {
+            width: 150px;
+            height: 150px;
+            background-image: url('https://path-to-wizard-animation.gif');
+            background-size: cover;
+            margin: 0 auto 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px; /* Larger text size */
+            font-weight: bold;
+            color: #ff6347; /* Tomato color */
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cek Khodam</h1>
+    <div class="wizard-animation"></div>
+    <input type="text" id="name" placeholder="Masukkan Nama Anda">
+    <button onclick="cekKhodam()">Cek</button>
+    <div id="result" class="result"></div>
+
+    <script>
+        const khodams = [
+            "goblin",
+            "kosong",
+            "kuntilanak",
+            "Nyiroro Kidul",
+            "kosong",
+            "pocong",
+            "ikan cupang",
+            "kuyang",
+            "kosong",
+            "tuyul",
+            "kosong",
+            "wewe gombel",
+            "genderuwo",
+            "naga",
+            "rawa rontek",
+        ];
+
+        function cekKhodam() {
+            const name = document.getElementById('name').value;
+            if (name === '') {
+                alert('Silakan masukkan nama Anda.');
+                return;
+            }
+            const khodam = khodams[Math.floor(Math.random() * khodams.length)];
+            document.getElementById('result').innerHTML = khodam;
+        }
+    </script>
+</body>
+</html>
